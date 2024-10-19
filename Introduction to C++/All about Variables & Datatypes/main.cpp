@@ -74,6 +74,7 @@ int main()
     // Binary to deciaml happens via base 2 to base 10 conversion
     // Calculate the contributions by 2 ^ n * binary digit, where n is the position/index
     // Then add up all of the contributions to get the decimal
+    // Finally, get the binary number by counting the digits from bottom to top
 
     // Example:
     // 24
@@ -87,6 +88,7 @@ int main()
     // Final: 11000
 
     // 11000
+    // Base 10 to base 2 conversion also happens from right to left
 
     // 2 ^ 0 * 0 = 0
     // 2 ^ 1 * 0 = 0
