@@ -114,6 +114,114 @@ void printHollowDiamond(int n)
     }
 }
 
+void printMinPyramid(int n)
+{
+    for (int row = 0; row < n; row++)
+    {
+        // Stars (N - Row)
+        for (int i = 0; i < n - row; i++)
+            cout << "*";
+
+        // Spaces (2 x Row + 1)
+        for (int i = 0; i < 2 * row + 1; i++)
+            cout << " ";
+
+        // Stars (N - Row)
+        for (int i = 0; i < n - row; i++)
+            cout << "*";
+
+        cout << endl;
+    }
+
+    for (int row = 0; row < n; row++)
+    {
+        // Stars (Row + 1)
+        for (int i = 0; i < row + 1; i++)
+            cout << "*";
+
+        // Spaces (2 x (N - Row) - 1)
+        for (int i = 0; i < 2 * (n - row) - 1; i++)
+            cout << " ";
+
+        // Stars (Row + 1)
+        for (int i = 0; i < row + 1; i++)
+            cout << "*";
+
+        cout << endl;
+    }
+}
+
+void printFancy12(int n)
+{
+    for (int row = 0; row < n; row++)
+    {
+        for (int i = 0; i < (2 * row) + 1; i++)
+        {
+            if (i % 2 == 0)
+                cout << row + 1;
+            else
+                cout << "*";
+        }
+
+        cout << endl;
+    }
+}
+
+void printFullFancy12(int n)
+{
+    for (int row = 0; row < n; row++)
+    {
+        for (int i = 0; i < (2 * row) + 1; i++)
+        {
+            if (i % 2 == 0)
+                cout << row + 1;
+            else
+                cout << "*";
+        }
+
+        cout << endl;
+    }
+
+    n--;
+
+    for (int row = 0; row < n; row++)
+    {
+        for (int i = 0; i < 2 * (n - row) - 1; i++)
+        {
+            if (i % 2 == 0)
+                cout << n - row;
+            else
+                cout << "*";
+        }
+
+        cout << endl;
+    }
+}
+
+void printABCBA(int n)
+{
+    for (int row = 0; row < n; row++)
+    {
+        char ch = 'A';
+
+        for (int i = 0; i < row + 1; i++)
+        {
+            cout << ch;
+            ch++;
+        }
+
+        ch--;
+
+        while (ch > 'A')
+        {
+            ch--;
+            cout << ch;
+        }
+
+        cout << endl;
+    }
+}
+
 int main()
 {
     int n;
@@ -176,7 +284,48 @@ int main()
     //   *   *
     //    * *
     //     *
-    printHollowDiamond(n);
+    // printHollowDiamond(n);
+
+    // Min Pyramid
+    // ***** *****
+    // ****   ****
+    // ***     ***
+    // **       **
+    // *         *
+    // *         *
+    // **       **
+    // ***     ***
+    // ****   ****
+    // ***** *****
+    // printMinPyramid(n);
+
+    // Fancy12 Pattern
+    // 1
+    // 2*2
+    // 3*3*3
+    // 4*4*4*4
+    // 5*5*5*5*5
+    // printFancy12(n);
+
+    // Full Fancy12 Pattern
+    // 1
+    // 2*2
+    // 3*3*3
+    // 4*4*4*4
+    // 5*5*5*5*5
+    // 4*4*4*4
+    // 3*3*3
+    // 2*2
+    // 1
+    // printFullFancy12(n);
+
+    // ABCBA
+    // A
+    // ABA
+    // ABCBA
+    // ABCDCBA
+    // ABCDEDCBA
+    printABCBA(n);
 
     return 0;
 }
